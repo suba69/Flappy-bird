@@ -6,11 +6,6 @@ public class Spawner : MonoBehaviour
     public GameObject pipePrefab;
     private float timer;
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
         if (timer <= 0)
