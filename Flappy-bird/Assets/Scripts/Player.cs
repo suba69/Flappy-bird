@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,7 +24,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PipePart"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameManager.instance.Lose();
         }
     }
 }
