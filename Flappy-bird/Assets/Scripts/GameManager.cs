@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public GameObject loseWindow;
     public static GameManager instance;
-
     private void Start()
     {
         instance = this;
@@ -21,5 +20,11 @@ public class GameManager : MonoBehaviour
     {
         loseWindow.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public void LoadScene(int sceneNumber)
+    {
+        SceneManager.LoadScene(sceneNumber);
+        Time.timeScale = 1;
     }
 }
