@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float jumpForce;
-    public BirdAnimation birdAnimation;
 
     private void Start()
     {
@@ -18,9 +17,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            birdAnimation.StartRotation();
         }
-        birdAnimation.ApplyRotation(rb.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
