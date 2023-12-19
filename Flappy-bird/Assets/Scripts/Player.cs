@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float jumpForce;
+    public float ceilingHeight;
 
     private void Start()
     {
@@ -17,6 +18,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+
+        if (transform.position.y > ceilingHeight)
+        {
+            transform.position = new Vector2(transform.position.x, ceilingHeight);
+            rb.velocity = Vector2.zero;
         }
     }
 
